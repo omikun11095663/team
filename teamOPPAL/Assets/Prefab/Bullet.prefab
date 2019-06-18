@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4afc6c39b491cc4b88deb2e56aa51a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotTime: 100
+  shotTime: 1000
   TamaPrefab: {fileID: 100000, guid: 2aad8c81a221d124488582b85d1bcb7d, type: 3}

@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     public float z;
     public Vector3 direction;
     public float speed;
-
+    private GameObject Houtou;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,8 @@ public class PlayerMove : MonoBehaviour
         
         direction.Normalize();
 
-        
        
+        //Houtou.transform.SetPositionAndRotation(new Vector3(0, 0, 0), Quaternion.identity);
+
     }
 }
