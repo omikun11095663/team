@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 777633409332995200}
   - component: {fileID: 6014476737912256787}
   - component: {fileID: 8835891255741737539}
+  - component: {fileID: 8570064542203887344}
   m_Layer: 0
   m_Name: Tama
-  m_TagString: Untagged
+  m_TagString: Tama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +110,16 @@ CapsuleCollider:
   m_Height: 0.40330398
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8570064542203887344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459918196451272145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8ac35ab8028774c8626c4aea41e479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TamaPrefab: {fileID: 1459918196451272145}
