@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     public float MoveSpeed;
-    public float angle;
+    public float rotationSmooth;
     public Vector3 GoalPos;
     //Random rnd = new Random();
     List<Vector3> GoalPosList = new List<Vector3>();
@@ -14,7 +14,6 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         GoalPos = new Vector3(Random.Range(95, -95), 0, Random.Range(48, - 48));
-
     }
 
     // Update is called once per frame
