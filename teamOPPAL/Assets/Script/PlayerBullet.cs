@@ -6,10 +6,12 @@ public class PlayerBullet : MonoBehaviour
 {
     public float shotTime;
     public GameObject TamaPrefab;
+    
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -18,15 +20,16 @@ public class PlayerBullet : MonoBehaviour
         if (Input.GetButtonDown("Shot"))
         {
             Shot();
-            
-        }
 
+        }
+        
     }
 
     void Shot()
     {
-        GameObject Tama = Instantiate(TamaPrefab, transform.position, Quaternion.identity);
+        GameObject Tama = Instantiate(TamaPrefab, transform.position, transform.rotation);
         Rigidbody tamarigidbody = Tama.GetComponent<Rigidbody>();
         tamarigidbody.AddForce(transform.forward * shotTime);
+        
     }
 }
