@@ -30,7 +30,6 @@ public class PlayerBullet : MonoBehaviour
         GameObject Tama = Instantiate(TamaPrefab, transform.position, transform.rotation);
         Rigidbody tamarigidbody = Tama.GetComponent<Rigidbody>();
         tamarigidbody.AddForce(transform.forward * shotTime);
-
-       
+        
     }
 }
