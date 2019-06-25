@@ -17,10 +17,10 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy")
             || collision.gameObject.CompareTag("Tama") || collision.gameObject.CompareTag("Bomb"))
@@ -44,7 +44,6 @@ public class Death : MonoBehaviour
     //{
     //    var exp = GetComponent<ParticleSystem>();
     //    exp.Play();
-    //    //Destroy(gameObject,exp.duration);
     //}
 
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BombParticle : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class BombParticle : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            
+            Destroy(other.gameObject);
         }
     }
 }

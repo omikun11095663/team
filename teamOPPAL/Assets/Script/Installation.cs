@@ -8,11 +8,12 @@ public class Installation : MonoBehaviour
     public float radius;
     public float pawer;
     public GameObject LandminePrefab;
+    public ParticleSystem particle;
 
     // Start is called before the first frame update
     void Start()
     {
-        detonationTime = 0;
+        
     }
 
     // Update is called once per frame
@@ -29,23 +30,26 @@ public class Installation : MonoBehaviour
         GameObject landmine = Instantiate(LandminePrefab, transform.position, Quaternion.identity);
         detonationTime += Time.deltaTime;
 
-        //if (detonationTime >= 1)
+        var exp = GetComponent<ParticleSystem>();
+        exp.Play();
+        //GameObject effect = Instantiate(particle, transform.position, Quaternion.identity) as GameObject;
+
+        //if (detonationtime >= 1)
         //{
-            Debug.Log("if文入ったよ");
-            Vector3 explosionPos = transform.position;
-            Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-            foreach (Collider hit in colliders)
-            {
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
+        //Debug.Log("if文入ったよ");
+        //Vector3 explosionPos = transform.position;
+        //Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        //foreach (Collider hit in colliders)
+        //{
+        //    Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-                if(rb != null)
-                {
-                    rb.AddExplosionForce(pawer, explosionPos, radius, 3.0f);
-                }
-            }
-
-            detonationTime = 0;
+        //    if(rb != null)
+        //    {
+        //        rb.AddExplosionForce(pawer, explosionPos, radius, 3.0f);
+        //    }
         //}
+        //detonationTime = 0;
+    }
     }
 
     //void ExplosionDamage(Vector3 center,float radius)
@@ -59,4 +63,4 @@ public class Installation : MonoBehaviour
     //    }
     //}
 
-}
+
