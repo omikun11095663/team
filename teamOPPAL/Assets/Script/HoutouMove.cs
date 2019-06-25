@@ -23,7 +23,5 @@ public class HoutouMove : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(Player.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime
              * rotationSmooth);
-
-
     }
 }

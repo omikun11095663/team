@@ -6,6 +6,7 @@ public class Death : MonoBehaviour
 {
     public GameObject TamaPrefab;
     public int TamaDeadth;
+    //public ParticleSystem particleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +22,12 @@ public class Death : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("Tama") || collision.gameObject.CompareTag("Bomb"))
         {
             Destroy(collision.gameObject);
             Destroy(TamaPrefab);
+            //Explode();
         }
         else if (collision.gameObject.CompareTag("wall"))
         {
@@ -32,10 +35,16 @@ public class Death : MonoBehaviour
             if (TamaDeadth == 2)
             {
                 Destroy(TamaPrefab);
+                //Explode();
             }
         }
     }
 
-
+    //void Explode()
+    //{
+    //    var exp = GetComponent<ParticleSystem>();
+    //    exp.Play();
+    //    //Destroy(gameObject,exp.duration);
+    //}
 
 }

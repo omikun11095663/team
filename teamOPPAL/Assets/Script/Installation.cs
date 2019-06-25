@@ -29,8 +29,9 @@ public class Installation : MonoBehaviour
         GameObject landmine = Instantiate(LandminePrefab, transform.position, Quaternion.identity);
         detonationTime += Time.deltaTime;
 
-        if (detonationTime >= 5)
-        {
+        //if (detonationTime >= 1)
+        //{
+            Debug.Log("if文入ったよ");
             Vector3 explosionPos = transform.position;
             Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
             foreach (Collider hit in colliders)
@@ -44,6 +45,18 @@ public class Installation : MonoBehaviour
             }
 
             detonationTime = 0;
-        }
+        //}
     }
+
+    //void ExplosionDamage(Vector3 center,float radius)
+    //{
+    //    Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+    //    int i = 0;
+    //    while (i < hitColliders.Length)
+    //    {
+    //        hitColliders[i].SendMessage("AddDeath");
+    //        i++;
+    //    }
+    //}
+
 }
