@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TamaPrefab: {fileID: 1459918196451272145}
+  TamaDeadth: 0
+  particleSystem: {fileID: 6917865054553156062, guid: f4957e72cbe42d14e85adaaa7f8e6c75,
+    type: 3}

@@ -33,9 +33,9 @@ public class EnemyMove : MonoBehaviour
         //目標地点（GoalPos）との距離（distanceToTarget）が、指定の数（changeTargetDistance）
         //よりも小さくなっていたら新しい目標地点を設定する
         float distanceToTarget = Vector3.SqrMagnitude(transform.position - GoalPos);
-        if (distanceToTarget < changeTargetDistance)
+        if (distanceToTarget < changeTargetDistance || seconds >= 3)
         {
-
+            seconds = 0;
             GoalPos = GetRandomPositionOnlevel();
         }
 
@@ -53,5 +53,14 @@ public class EnemyMove : MonoBehaviour
         float Level = 55f;
         return new
              Vector3(Random.Range(-Level, Level), 0, Random.Range(-Level, Level));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("Player")
+            || collision.gameObject.CompareTag("Enemy"))
+        {
+             GoalPos = GetRandomPositionOnlevel();
+        }
     }
 }

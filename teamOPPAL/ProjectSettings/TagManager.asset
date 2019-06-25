@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - wall
   - Tama
+  - Bomb
   layers:
   - Default
   - TransparentFX
